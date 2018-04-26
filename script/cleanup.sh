@@ -37,6 +37,9 @@ fi
 echo "==> Clean up yum cache of metadata and packages to save space"
 yum -y --enablerepo='*' clean all
 
+echo "==> Removing PackageKit"
+yum -y remove PackageKit
+
 echo "==> Removing temporary files used to build box"
 rm -rf /tmp/*
 
